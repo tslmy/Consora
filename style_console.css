@@ -1,0 +1,51 @@
+body {
+	margin:0 0;
+	overflow: hidden;
+	font-family: monospace,"Courier New", Courier;
+	text-shadow: 0px 1px 3px #222;
+}
+#background {
+	z-index:-99;
+	width:100%;
+	height:100%;
+	background: -webkit-linear-gradient(top, #b5bdc8 0%,#828c95 36%,#23495b 100%);
+	background-size:cover;
+	pointer-events:none;
+}
+#cmd {
+	position:absolute;
+	width:100%;
+	height:40%;
+	z-index:100;
+	left: 0px;
+	bottom: 0px;
+	background-color: rgba(0,0,0,.1);
+	color: #FFF;
+	overflow: hidden;
+	box-shadow:0 0 7px grey;
+}
+#console {
+	width:100%;
+	height:100%;
+	left: 0px;
+	overflow: hidden;
+}
+#input_bar {
+	display:inline;
+	width:100%;
+	height:20px;
+	left: 0px;
+	bottom: 0px;
+	overflow: hidden;
+	border:0;
+	background:none;
+	font-family: monospace,"Courier New", Courier;
+	color:white;
+	outline:none;
+}
+#input_line {
+	display:block;
+	height:20px;
+	white-space: nowrap;
+	overflow:hidden;
+}
