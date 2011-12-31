@@ -67,7 +67,7 @@ function exec(command_set)
 			show('I won\'t.');
 		break;
 		case 'echo':
-			show(command_raw.slice(command_name.length+1,command_raw.length));
+			show('<span class="quote">'+command_raw.slice(command_name.length+1,command_raw.length)+'</span>');
 		break;
 		case 'bg':
 			if (command_set.length == 1) $('#background').css("background", 'grey')
@@ -75,6 +75,6 @@ function exec(command_set)
 			else if ((command_set.length > 2) && (command_set[1] == 'url')) $('#background').css("background", 'url('+command_set[2]+')');
 		break;
 		default:
-			show('Unknown command: '+command_name);
+			show('<span style="color:yellow"><b>[ERROR]Unknown command: </b></span><span class="quote">'+command_name+'</span>');
 	};
 };

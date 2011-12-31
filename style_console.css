@@ -23,6 +23,8 @@ body {
 	color: #FFF;
 	overflow: hidden;
 	box-shadow:0 0 7px grey;
+	word-wrap:break-word;
+	word-break:break-all;
 }
 #console {
 	width:100%;
@@ -48,4 +50,8 @@ body {
 	height:20px;
 	white-space: nowrap;
 	overflow:hidden;
+}
+
+#console .quote {
+	color:#aaa;
 }
