@@ -1,36 +1,82 @@
+/* overall settings  START */
 body {
 	margin:0 0;
 	overflow: hidden;
-	font-family: monospace,"Courier New", Courier;
-	text-shadow: 0px 1px 3px #222;
+	font-family: "Courier New", Courier, monospace;
+	height:100%;
+	width:100%;
 }
 #background {
 	z-index:-99;
-	width:100%;
-	height:100%;
 	background: -webkit-linear-gradient(top, #b5bdc8 0%,#828c95 36%,#23495b 100%);
 	background-size:cover;
 	pointer-events:none;
 }
-#cmd {
-	position:absolute;
+a {text-decoration:none;}
+.full_fill {
+	height:100%;
 	width:100%;
-	height:40%;
-	z-index:100;
+}
+/* overall settings  END */
+/* CMD  START */
+#window{
+	width:100%;
+	max-height:100%;
+	position:absolute;
 	left: 0px;
 	bottom: 0px;
-	background-color: rgba(0,0,0,.1);
+	z-index:100;
+	/*animation*/
+	-webkit-animation-name: push-in;
+	-webkit-animation-duration: .6s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-out; 
+	-webkit-transform-origin-x: 100%;
+}
+@-webkit-keyframes push-in { 
+	0% {bottom:-60%;} 
+	100% {bottom:0%;	} 
+}
+@-webkit-keyframes push-out { 
+	0% {bottom:0%;} 
+	100% {bottom:-60%;	} 
+}
+#resize_handle {
+	width:100%;
+	height:5px;
+	left: 0px;
+	overflow: hidden;
+}
+#resize_handle:hover{
+	background:rgba(255,255,255,.5);
+	cursor:s-resize;
+}
+#cmd {
+	width:100%;
+	background-color: rgba(0,0,0,.5);
 	color: #FFF;
 	overflow: hidden;
 	box-shadow:0 0 7px grey;
 	word-wrap:break-word;
 	word-break:break-all;
 }
+.shut {
+	height:20px;
+}
+.open {
+	height:300px;
+}
 #console {
 	width:100%;
 	height:100%;
 	left: 0px;
 	overflow: hidden;
+}
+#input_line {
+	display:block;
+	height:20px;
+	white-space: nowrap;
+	overflow:hidden;
 }
 #input_bar {
 	display:inline;
@@ -41,17 +87,134 @@ body {
 	overflow: hidden;
 	border:0;
 	background:none;
-	font-family: monospace,"Courier New", Courier;
+	font-family: "Courier New", Courier, monospace;
 	color:white;
 	outline:none;
 }
-#input_line {
-	display:block;
-	height:20px;
-	white-space: nowrap;
-	overflow:hidden;
-}
-
+/* inside the console */
 #console .quote {
 	color:#aaa;
 }
+#console .error {
+	color:red;
+}
+#console .typo {
+	color:yellow;
+}
+#console .tag {
+	font-weight:bold;
+}
+#console .hint {
+	font-style: italic;
+}
+/* END */
+
+/*tiles START*/
+#content {
+	position:absolute;
+	text-align:left;
+	pointer-events:auto;
+	color:#666;
+	font-size:14px;
+	word-wrap: break-word;
+	word-break: break-all;
+	text-shadow:0 1px 0px #fff;
+	height:100%;
+	width:100%;
+	overflow:auto;
+	background:none;
+}
+.big_buttons {
+	position: float;
+	height: 150px;
+	border: none;
+	max-height: 240px;
+	max-width: 40%;
+	float: right;
+	margin-top: 8px;
+	margin-left: 8px;
+	z-index: 1;
+	display:inline;
+	color:#FFF;
+	font-family:Arial;
+	font-size:80px;
+	word-wrap: break-word;
+	word-break: break-all;
+	overflow:hidden;
+	line-height:59px;
+	text-align:left;
+	opacity:.9;
+}
+
+div.big_buttons{
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation-name: my-spin;
+	-webkit-animation-duration: .6s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear; 
+	-webkit-transform-origin-x: 100%;
+	-webkit-transform-duration: .6s;
+	-webkit-transform-property: all;
+}
+@-webkit-keyframes my-spin { 
+	0% { opacity:.1; -webkit-transform: rotateY(90deg) skew(0deg, -10deg); } 
+	100% { 	opacity:.9; -webkit-transform: rotateY(0deg) skew(0deg, 0deg); } 
+}
+.big_buttons:hover {
+	opacity:.7;
+}
+/*tiles END*/
+/*-webkit-scrollbar START*/
+::-webkit-scrollbar {
+    width:7px;
+}
+::-webkit-scrollbar-track-piece {
+    background: rgba(255,255,255,.0);
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: none;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.6);
+    border-radius:5px 0 0 5px;
+}
+/*-webkit-scrollbar END*/
+/*slide to unlock START*/
+#semi-transperent_black {
+position:fixed;
+background:rgba(0,0,0,.5);
+display:none;
+z-index:9999;
+}
+#slider_centering {
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+#slider_track {
+	background:rgba(0,0,0,.5);
+	border-radius:10px;
+	width:300px;
+	margin:auto;
+	padding:20px;
+}
+#slider {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226, 226, 226, 1)), color-stop(47%,rgba(219, 219, 219, 1)), color-stop(51%,rgba(209, 209, 209, 1)), color-stop(99%,rgba(145, 145, 145, 1)));
+	width: 70px;
+	height: 50px;
+	display: block;
+	border-radius: 10px;
+	box-shadow: 0 0 17px #444;
+	font-size: 40px;
+	text-align: center;
+	color: rgba(0, 0, 0, .5);
+	cursor:pointer;
+}
+#slider_arrow {
+	line-height: 60px;
+	overflow: hidden;
+	-webkit-user-select: none; 
+	cursor:pointer;
+}
+/*slide to unlock END*/

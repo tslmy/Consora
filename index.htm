@@ -1,18 +1,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="style_console.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-    <script type="text/javascript" src="code.js"></script>
     <title>
       Consora 0.1
     </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="style_console.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'></script>
+	<script type="text/javascript" src="environ.js"></script>
+    <script type="text/javascript" src="system.js"></script>
+    <script type="text/javascript" src="program/basic_program.js"></script>
   </head>
-  <body onclick="$('#input_bar').focus()">
-  <div id="background"></div>
-    <div id="cmd">
-		<div id="console" name="console"></div>
-		<span id="input_line" nowrap="nowrap" >&gt;<input id="input_bar" onkeypress="if (event.keyCode==13) {enter(); return false;}" name="input_bar" /></span>
+  <body>
+    <div id="content">
+		<div class="big_buttons" style="font-size:70px;background-color:rgb(275,32,98);width:290px;" id="t"></div>
+    </div>
+	<div id="window">
+		<div id="resize_handle"></div>
+		<div id="cmd" class="open" onclick="$('#input_bar').focus()">
+			<div id="console"></div>
+			<span id="input_line" nowrap="nowrap" >
+				<span id="prompt">&gt;</span><input id="input_bar" onkeypress="if (event.keyCode==13) {enter(); return false;}" name="input_bar" />
+			</span>
+		</div>
 	</div>
+	<div class="full_fill" id="semi-transperent_black">
+	    <div id="slider_centering">
+			<div id="slider_track">
+				<div id="slider">
+					<div id="slider_arrow">&#x27A1;</div>
+				</div>
+			</div>
+       </div>
+	</div>
+	<div class="full_fill" id="background"></div>
   </body>
 </html>
