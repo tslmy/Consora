@@ -1,0 +1,28 @@
+Consora
+========
+A morden console right in your own browser!  
+Author: [Tslmy][] ([Twitter](https://twitter.com/tslmy))  
+[Tslmy]: http://tslmy.tk
+
+Purpose
+-----
+*  as a presentation tool
+  * in preparation of demonstrating simple ideas, on which occasion I may not had time to make a PPT.
+  * Assist my mate making his JavaScript-based cloud OS. 
+*  as a way of learning
+  * Advanced JavaScript
+     *  jQuery
+     *  AJAX
+     *  DOM
+  * CSS3 Animations _(for Webkit)_
+
+Gratitude
+-------
+I'd like to show my immense gratitude to the following: 
+
+*   Jack from 1a23
+    That boy advised me to make a web-based console for my site, and provided me with much resource to form the concept.
+*   Hello World _(Yes, that's his name.)_  
+    His planning to make a cloud OS with hardly not knowing anything about client-side programming encouraged me to construct my own one in assist of him.
+
+_(P.S. I suddenly feel the default coloring looks like T-Mobile... My illusion?)_

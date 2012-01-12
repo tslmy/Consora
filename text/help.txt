@@ -1,0 +1,12 @@
+## Available Command List
+help	-This won't do the trick.
+h	-Show Available Command List.
+c	-Create a tile with given text.
+load	-Load text file to both a new tile and the console output. Nothing will happen if error occurred.
+echo	-Show given text in the console output.
+about	-Show About file.
+bg	-Change the background color, e.g. bg #abc, bg red, bg rgba(1,2,3,.5), etc.
+bg url	-Change the background image, e.g. bg url a.jpg.
+lock	-Lock the screen with a grey semi-transperent shadow. Click on it to unlock.
+cls     -Clear the battlefield.
+show    -Re-open the tile you previously closed by clicking on it, e.g. show #user_created_0, show 0, show user_created_0.
