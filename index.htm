@@ -1,38 +1,136 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>
-      Consora 0.1
-    </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="style_console.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-	<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'></script>
-	<script type="text/javascript" src="environ.js"></script>
-    <script type="text/javascript" src="system.js"></script>
-    <script type="text/javascript" src="program/basic_program.js"></script>
-  </head>
-  <body>
-    <div id="content">
-		<div class="big_buttons" style="font-size:70px;background-color:rgb(275,32,98);width:290px;" id="t"></div>
-    </div>
-	<div id="window">
-		<div id="resize_handle"></div>
-		<div id="cmd" class="open" onclick="$('#input_bar').focus()">
-			<div id="console"></div>
-			<span id="input_line" nowrap="nowrap" >
-				<span id="prompt">&gt;</span><input id="input_bar" onkeypress="if (event.keyCode==13) {enter(); return false;}" name="input_bar" />
-			</span>
-		</div>
-	</div>
-	<div class="full_fill" id="semi-transperent_black">
-	    <div id="slider_centering">
-			<div id="slider_track">
-				<div id="slider">
-					<div id="slider_arrow">&#x27A1;</div>
-				</div>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title>Cos</title>
+		<link href="style_cos.css" rel="stylesheet" type="text/css" />
+		<link href="css/style_scrollbar.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script><!-- loading jQuery -->
+		<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'></script><!-- loading jQuery UI -->
+		<script type="text/javascript" src="plugins/ui.tabs.closable.min.js"></script>
+		<script type="text/javascript" src="plugins/apprise/apprise-1.5.min.js"></script>
+		<script type="text/javascript" src="plugins/jquery.md5.js"></script>
+		<link rel="stylesheet" href="plugins/apprise/apprise.css" type="text/css" />
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-28635151-1']);
+		  _gaq.push(['_setDomainName', 'lrin.tk']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+	<body>
+		<div id="main_window">
+			<div id="top_bar">
+				<ul>
+					<li id="main_panel"><a href="#ui-tabs-0">v</a></li>
+				</ul>
+				<button id="add_button">+</button>
 			</div>
-       </div>
-	</div>
-	<div class="full_fill" id="background"></div>
-  </body>
+			<div id="ui-tabs-0">
+				<iframe id="consora" src="consora.htm"></iframe>
+			</div>
+		</div>
+		<div id="user_control">
+			<span id="user_display" title="Your username.">Demoris</span>
+			<a id="status_indicator" title="Status indicator.">=</a>
+			<span id="timer">12:34:56</span>
+			<script type="text/javascript">
+				//start of timer
+					function tick() { 
+						var today = new Date(); 
+						document.getElementById("timer").innerHTML=today.getHours()+":"+today.getMinutes()+":"+today.getSeconds(); 
+						window.setTimeout("tick();", 1000); 
+					};
+					window.onload=tick;
+				//end of timer
+				user_email='tslimingyang@126.com';
+				$('#user_display').click(function(){apprise(
+				'LOGIN via Email', 
+				{
+					'input':user_email, 
+					'textOk':'Log in',
+					'textCancel':'Log Out'
+				},
+				function(r) {	if (r==false||r.match(/^(.+)@(.+)$/)==null){$('#user_display').html('<i>LiveUser</i>').css('background-image','')}
+								else		{user_login(r)}}
+				);});
+				function user_login(r) {
+					user_email=r;
+					user_name=user_email.slice(0,user_email.search('@'));
+					//user_name_index=user_email.search('@');
+					//display_index=(user_name_index<=7?user_name_index:7);
+					$('#user_display').css({'background-image':'url("http://www.gravatar.com/avatar/'+$.md5(user_email)+'?s=50&d=identicon&r=g")','color':'rgba(255,255,255,.7)'});
+					$('#user_display').html(user_name);
+				};
+				$('#timer').hover(function(){
+													$('#map').css('opacity','1');
+													$(this).toggleClass('indicator_on');
+												},
+									function(){
+													$('#map').css('opacity','0');
+													$(this).toggleClass('indicator_on');
+												});
+				function toggle_status(){
+					$('#status_list').toggle();
+					$('#status_indicator').toggleClass('indicator_on');
+				};
+				$('#status_indicator').click(toggle_status);
+			</script>
+			<a id="close_button">r</a>
+		</div>
+			<ul id="status_list" style="display:none">
+				<li style="color:white">Idle</li>
+				<li style="color:rgb(145, 232, 66)">Online</li>
+				<li style="color:rgb(255,168,76) ">Buzy</li>
+				<li style="color:#207cca">Leave</li>
+				<li style="color:grey">Offline</li>
+			</ul>
+			<script type="text/javascript">
+				$('#status_list li').click(function (){
+					$('#status_indicator').css('color',$(this).css('color'));
+					toggle_status();
+				});
+			</script>
+			<div id="map" style="opacity:0">&#251;</div>
+		<script type="text/javascript">
+				$(function() {
+					$tabs = $( "#main_window" );
+					function action_add (event, ui)
+					{
+						//console.log(event, ui,'<- #'+ui.index);
+						ui.panel.innerHTML='<iframe class="browser" src="pages/browser/browser.html"> </iframe>';
+						ui.tab.innerText=ui.panel.id;//'New Tab #'+ui.index;
+						$tabs.tabs('select',ui.index);
+					};
+					function action_del(){
+						id=$tabs.tabs('option', 'selected');
+						if (id!=0 &&id!=-1) {$tabs.tabs("remove",id);};
+					};
+					$tabs.tabs({
+						cache: true,
+						collapsible: true,
+						add: action_add,
+						closable: true,
+						//fx: {width: "toggle", duration:'fast'}
+					});
+					$( "#top_bar ul" ).sortable({
+						axis: "x"
+					});
+					//????$tabs.bind('tabsadd', action_add);
+					function panel_add() {$tabs.tabs("add",'','New Tab')};
+					$('#add_button').click(panel_add);
+					$('#top_bar').dblclick(panel_add);
+					$('#close_button').click(action_del);
+				});
+		</script>
+		<iframe id="sidebar" src="pages/sidebar/sidebar.html"></iframe>
+	</body>
 </html>

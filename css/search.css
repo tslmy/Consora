@@ -1,0 +1,64 @@
+/*aside Google Search START*/
+aside#search {
+	width:200px;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,.5);
+	color:white;
+	word-wrap:break-word;
+	word-break:break-all;
+	overflow: auto;
+	z-index:5;
+}
+.gsc-search-box,.gsc-resultsHeader{
+	display: none;
+}
+.search_result {
+	display:block;
+	font-size: 11px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-left:2px;
+}
+.search_result:hover {
+	background: rgba(0,0,0,.2);
+}
+.search_result a{
+	color:#4af;
+}
+.search_cache {
+	display:inline;
+	font-weight: bold;
+	font-size:17px;
+	line-height:12px;
+	padding-right:2px;
+}
+.search_title {
+	display:inline;
+	font-weight: bold;
+	line-height: 13px;
+	font-size: 14px;
+}
+.search_content {
+	display:block;
+	font-family: tahoma;
+	min-height: 23px;
+	color: #EEE;
+}
+.search_content:first-letter {
+	font-size: 23px;
+	float:left;
+	padding-right:2px;
+}
+.search_result > .hr {
+	height:1px;
+	background:-webkit-gradient(linear,0 0,100% 0,from(#ddd), to(#fff));
+	width:100%;
+	position:relative;
+	top:4px;
+	right:11px;
+}
+
+/*aside Google Search END*/

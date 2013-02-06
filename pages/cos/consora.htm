@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+      Consora 0.1
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="style_console.css" rel="stylesheet" type="text/css" />
+	<!-- loading plugins (outer) -->
+	 <!--script src="https://www.google.com/jsapi?key=ABQIAAAAcWAQOPdR1VmYmCldKUKQKBQkr0k2l0v5X2LkSTcJ0D9aUNhLvRSyvmEdcGT4Om9X8EVei-LFKjiSQQ" type="text/javascript"></script> <1-- Google Search API -->
+	<!--script type="text/javascript">
+		google.load("jquery", "1.4.2");
+		google.load("jqueryui", "1.7.2");
+	</script-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script><!-- loading jQuery -->
+	<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'></script><!-- loading jQuery UI -->
+	<!-- loading plugins (inner) -->
+	<script type="text/javascript" src="plugins/dragscrollable.js"></script>
+	<!-- DO NOT UPGRADE STICKY PLUGIN! I've made some modifications.-->
+	<script type="text/javascript" src="plugins/sticky/sticky.min.js"></script>
+	<link rel="stylesheet" href="plugins/sticky/sticky.min.css" type="text/css" />
+	<!-- badger.min ALSO EDITED!-->
+	<script type="text/javascript" src="plugins/badger/badger.min.js"></script>
+	<link rel="stylesheet" href="plugins/badger/badger.min.css" type="text/css" />
+	<!-- apprise -->
+	<script type="text/javascript" src="plugins/apprise/apprise-1.5.min.js"></script>
+	<link rel="stylesheet" href="plugins/apprise/apprise.css" type="text/css" />
+	<!--well-prepared functions & universal functions are packed together to reduce the size of main code file, better for brain.-->
+	<script type="text/javascript" src="environ.js"></script>
+	<!-- "system.js" provides basic structure of Consora -->
+    <script type="text/javascript" src="system.js"></script>
+	<!-- "basic_program.js" provides basic commands of Consora. If omitted, run "ins basic"(AJAX needed!!) in Consora.-->
+    <script type="text/javascript" src="program/pack_basic.js"></script>
+  </head>
+  <body>
+	<div class="full_fill centering_outer" id="load_mask">
+		<div class="centering_inner" id="load_mask_text">
+			<noscript>
+				<p class="5lang_para">You need to restart your computer. Hold down the power button for several seconds or press the Restart button.</p>
+				<p class="5lang_para">Redémarrez l'ordinateur. Enfoncez le bouton de démarrage jusqu'à l'extinction puis appuyer dessus une nouvelle fois.</p>
+				<p class="5lang_para">Debe reiniciar el ordenador. Mantenga pulsado el boton de arranque hasta que se apague y luego vuelva a pulsarlo.</p>
+				<p class="5lang_para">Sie müssen den Computer neu starten. Halten Sie den Ein-/Ausschalter gedrückt bis das Gerat ausgeschaltet ist und drücken Sie ihn dann erneut.</p>
+				<p class="5lang_para">コンピュータの再起動が必要です。電源が切れるまでパワーボタンを押し綼けてから、もう一度パワーボタンを押します。</p>
+			</noscript>
+		</div>
+	</div>
+	<div id="content">
+		<a href='http://tslmy.tk/'><div class='big_buttons' style='background-color:grey;width:50px;'>&gt;</div></a>
+		<div class="big_buttons" id="timer">
+			<span id="t"></span><br/>
+			<span id="appointment_info"></span>
+		</div>
+		<ul id="user_creatures">
+		</ul>
+	</div>
+	<aside id="dropbox"></aside>
+	<aside id="sidebar"></aside>
+	<div id="window" onclick="$('#input_bar').focus()">
+		<div id="resize_handle"></div>
+		<div id="view" >
+			<div id="console"></div>
+		</div>
+		<div id="preserved_area">
+			<span id="input_line">
+				<span id="prompt">&gt;</span><input id="input_bar" onkeypress="if (event.keyCode==13) {enter(); return false;}" name="input_bar" />
+			</span>
+		</div>
+	</div>
+	<div class="full_fill" id="semi-transperent_black">
+	    <div class="centering_inner">
+			<div id="slider_track">
+				<div id="slider">
+					<div id="slider_arrow">&#x27A1;</div>
+				</div>
+			</div>
+       </div>
+	</div>
+	<div class="full_fill" id="background"></div>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<link href="style_cos.css" rel="stylesheet" type="text/css" />		<link href="style_sidebar.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script><!-- loading jQuery -->
+		<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'></script><!-- loading jQuery UI -->
+	</head>
+	<body>
+		<div id="main_window">
+			<ul>
+				<li id="main_panel"><a href="#tabs-1">v</a></li>
+				<li><a href="#tabs-2">Proin dolor</a></li>
+				<li><a href="#tabs-3">Aenean lacinia</a></li>
+			</ul>
+			<div id="tabs-1">
+				<iframe id="consora" src="consora.htm"> </iframe>
+			</div>
+			<div id="tabs-2">
+				<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+			</div>
+			<div id="tabs-3">
+				<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+				<p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+				$(function() {
+					$( "#main_window" ).tabs({
+					collapsible: true
+					}
+					).find( "ul" ).sortable(
+					{ axis: "x" }
+					);
+				});
+		</script>
+		<div id="user_control">
+			<span id="user_name">COS User</span>
+			<a id="online_indicator">=</a>
+			<span id="timer">12:34</span>
+			<a id="close_button">r</a>
+		</div>
+		<aside id='sidebar'>
+			<section class='tile'>
+				<img src="img.gif" />
+				<div class="content_cover"></div>
+				<div class="content">
+					<h1>Test Tile #1 with image.</h1>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+				</div>
+			</section>
+			<section class='tile'>
+				<div class="content_cover"></div>
+				<div class="content">
+					<h1>Test Tile #2 without image.</h1>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+				</div>
+			</section>
+			<section class='tile tile_button'>
+				<div class="content_cover"></div>
+				<div class="content">
+					<h1>Test Tile #3 with button</h1>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+					<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+				</div>
+				<div class="button_row">
+				<a class="button" style="font-family:webdings;">0</a>
+				<a class="button" style="font-family:webdings;">1</a>
+				<a class="button" style="font-family:webdings;">2</a>
+				<a class="button" style="font-family:webdings;">i</a>
+				<a class="button" style="font-family:webdings;">x</a>
+				<a class="button button_more" style="font-family:webdings;">@</a>
+				<a class="button" style="font-family:webdings;">@</a>
+				<a class="button">A</a>
+				<a class="button">B</a>
+				<a class="button">C</a>
+				</div>
+			</section>
+			<section class='tile tile_player'>
+				<div class="content_cover"></div>
+				<img src="AlbumArtSmall.jpg" />
+				<div class="song_album">Time to say goodbye</div>
+				<div class="content">
+					<p class="note song_indicator">Now Playing:</p>
+					<h2 class="song_duration">3:02</h2>
+					<h1 class="song_name">SHOOT!</h1>
+					<h2 class="song_artist">Himatoya</h2>
+					
+				</div>
+				<div class="button_row">
+					<a class="button" style="font-family:webdings;">4</a>
+					<a class="button" style="font-family:webdings;">&lt;</a>
+					<a class="button" style="font-family:webdings;">7</a>
+					<a class="button" style="font-family:webdings;">8</a>
+					<a class="button" style="font-family:webdings;">`</a>
+					<a class="button button_more">&gt;</a>
+				</div>
+			</section>
+		</aside>
+		<script type="text/javascript">
+			$('aside#sidebar').sortable({
+				axis:'y',
+				<!-- placeholder: "drag_placeholder" -->
+			});
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+       <link href="style_browser.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" language="javascript">
+			function goa(){
+				where_to_go=document.all.dizhi.value.replace(/(^\s*)|(\s*$)/g, "");
+				if(where_to_go.toLowerCase().substring(0,7) == "http://")
+					{document.getElementById('a').src=where_to_go;}
+				else
+					{document.getElementById('a').src="http://"+where_to_go;};
+			};
+		</script>
+	</head>
+	<body>
+		<input id="dizhi" onkeydown= "if(event.keyCode==13){goa()}" />
+		<iframe id='a'></iframe>
+	</body>
+</html>

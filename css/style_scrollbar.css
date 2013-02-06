@@ -1,0 +1,17 @@
+/*-webkit-scrollbar START*/
+::-webkit-scrollbar {
+    width:7px;
+}
+::-webkit-scrollbar-track-piece {
+    background: rgba(255,255,255,.0);
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: none;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,.6);
+    border-radius:5px 0 0 5px;
+    pointer-events: auto;
+}
+/*-webkit-scrollbar END*/
