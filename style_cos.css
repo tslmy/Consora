@@ -1,4 +1,4 @@
-﻿* {
+* {
 	margin:0 0;
 	padding:0 0;
 	border:none;
@@ -8,8 +8,9 @@ body {
 	overflow:hidden;
 	-webkit-text-size-adjust:none;
 	font-family:arial;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1)));
+	background:-webkit-linear-gradient(top, rgb(181, 189, 200) 0%,rgb(130, 140, 149) 36%,rgb(35, 73, 91) 100%);
 	-webkit-user-select:none;
+    height: 100vh;
 }
 a {text-decoration:none;}
 .full_fill {
@@ -159,13 +160,14 @@ a {text-decoration:none;}
 	padding-right:200px;
 	height:100%;
 	width:100%;
-	position:absolute;
 	top:0;
 	left:0;
-	background:-webkit-linear-gradient(top, rgb(181, 189, 200) 0%,rgb(130, 140, 149) 36%,rgb(35, 73, 91) 100%);
+    position: absolute;
 	background-size:cover;
 }
-
+#ui-tabs-0 {
+    height: 100%;
+}
 #consora,.browser {
 	width:100%;
 	height:100%;
@@ -324,8 +326,9 @@ a {text-decoration:none;}
 	background:rgba(100,100,100,.8);
 }
 #sidebar {
-	position:absolute;
+    display: block;
+    position: absolute;
 	right:0px;
 	width:200px;
-	height:100%;
+	height:100vh;
 }
